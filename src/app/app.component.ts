@@ -7,4 +7,17 @@ import { Component } from "@angular/core";
 })
 export class AppComponent {
 
+  activeClient = true;
+  activeBook = false;
+
+  getActiveBook() {
+    this.activeClient = false;
+    this.activeBook = true;
+  }
+
+  getActiveClient() {
+    this.activeClient = true;
+    this.activeBook = false;
+  }
+
 }
