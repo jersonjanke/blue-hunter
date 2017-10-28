@@ -27,7 +27,7 @@ module.exports = {
             inject: 'body'
         }),
         new HtmlWebpackIncludeAssetsPlugin({
-            assets: ['css/bootstrap.min.css', 'css/style.css'],
+            assets: ['css/bootstrap.min.css', 'css/style.css', 'font-awesome.css'],
             append: false
         })
     ]

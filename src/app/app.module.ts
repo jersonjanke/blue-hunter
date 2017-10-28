@@ -4,6 +4,7 @@ import { Http, HttpModule } from "@angular/http";
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from "./app.component";
+import { ClientModule } from './client/client.module';
 import { AppRoutingModule } from "./app-routing.module";
 
 @NgModule({
@@ -15,7 +16,8 @@ import { AppRoutingModule } from "./app-routing.module";
     BrowserModule,
     HttpModule,
     FormsModule, 
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

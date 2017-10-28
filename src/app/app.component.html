@@ -5,7 +5,7 @@
         </div>
         <ul class="nav navbar-nav">
         <li [ngClass]="{'active' : activeClient}">
-            <a class="blue" (click)="getActiveClient()">
+            <a class="blue" (click)="getActiveClient()" routerLink="/client">
                 Cliente
             </a>
         </li>
