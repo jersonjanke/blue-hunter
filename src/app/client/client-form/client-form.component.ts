@@ -5,7 +5,8 @@ import { Client } from './client.model';
 
 @Component({
   selector: 'app-client-form',
-  templateUrl: './client-form.component.html'
+  templateUrl: './client-form.component.html',
+  styles: [require('./../../app.component.less')]
 })
 export class ClientFormComponent implements OnInit {
 

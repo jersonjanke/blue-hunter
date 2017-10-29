@@ -5,16 +5,14 @@ var HtmlWebpackIncludeAssetsPlugin = require('html-webpack-include-assets-plugin
 module.exports = {
     entry: './src/app/main.ts',
     resolve: {
-        extensions: ['.js', '.ts']
+        extensions: ['.js', '.ts', '.less']
     },
-    module: {
-        rules: [{
-            test: /\.html$/,
-            loaders: ['html-loader']
-        }, {
-            test: /\.css$/,
-            loaders: ['raw-loader']
-        }],
+    module: {        
+        rules: [
+            {test: /\.html$/, loaders: ['html-loader']}, 
+            {test: /\.css$/, loaders: ['raw-loader']},
+            {test: /\.less$/, loader: 'raw-loader!less-loader'}
+        ],
         exprContextCritical: false //avoid some nasty errors
     },
     plugins: [
