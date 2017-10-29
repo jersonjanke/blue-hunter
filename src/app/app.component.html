@@ -6,12 +6,14 @@
         <ul class="nav navbar-nav">
         <li [ngClass]="{'active' : activeClient}">
             <a class="blue" (click)="getActiveClient()" routerLink="/client">
-                Cliente
+                <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                Cliente                
             </a>
         </li>
         <li [ngClass]="{'active' : activeBook}">
-            <a class="blue" (click)="getActiveBook()">                
-                Livros
+            <a class="blue" (click)="getActiveBook()" routerLink="/book">                
+                <i class="fa fa-book" aria-hidden="true"></i>
+                Livros                
             </a>
         </li>
         </ul>

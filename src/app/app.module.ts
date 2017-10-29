@@ -5,6 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from "./app.component";
 import { ClientModule } from './client/client.module';
+import { BookModule } from './book/book.module';
 import { AppRoutingModule } from "./app-routing.module";
 
 @NgModule({
@@ -17,9 +18,10 @@ import { AppRoutingModule } from "./app-routing.module";
     HttpModule,
     FormsModule, 
     ReactiveFormsModule,
-    ClientModule
+    ClientModule,
+    BookModule
   ],
-  providers: [],
+  providers: [],  
   bootstrap: [AppComponent]
 })
 export class AppModule {

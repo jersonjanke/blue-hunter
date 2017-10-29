@@ -1,0 +1,73 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <h3 class="title blue">Pesquisa de livros</h3>
+    </div>
+    <div class="col-lg-12">
+      <form #f="ngForm" (ngSubmit)="search(f)" novalidate>
+        <div class="row">
+          <div class="col-md-10 col-sm-12">
+            <input name="name" required ngModel class="form-control" placeholder="Informe título do livro">
+            <div *ngIf="!isSearch">
+              <small *ngIf="books.length > 1">Encontramos <strong>{{books.length}}</strong> resultados.</small>
+              <small *ngIf="books.length == 1">Encontramos <strong>{{books.length}}</strong> resultado.</small>
+            </div>
+            <br/>
+          </div>
+          <div class="col-md-2 col-sm-12">
+            <button type="submit" [disabled]="!f.valid" class="btn btn-primary">
+              Pesquisar
+              <i *ngIf="isLoading" class="fa fa-spinner fa-spin" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12" *ngIf="books.length == 0 && !isSearch">
+      <div class="alert alert-info">
+        Não econtramos nenhum registro.
+      </div>
+    </div>
+    <div class="col-md-6" *ngFor="let book of books">
+      <div class="card-book">
+        <div class="row">
+          <div class="col-xs-2">
+            <div class="margin-top-10">
+              <div class="img-icon">
+                <i class="fa fa-book fa-4x book-opacity" aria-hidden="true"></i>  
+              </div>              
+            </div>
+          </div>
+          <div class="col-xs-10">
+            <div>
+              <span>Código:</span>
+              <span>{{book.id}}</span>
+            </div>
+            <div>
+              <span>Título:</span>
+              <span>{{book.title}}</span>
+            </div>
+            <div>
+              <span>Author:</span>
+              <span>{{book.author}}</span>
+            </div>
+            <div>
+              <span>Publicação:</span>
+              <span>{{book.yearPublished}}</span>
+            </div>
+            <div>
+              <span>Preço:</span>
+              <span>{{book.price}}</span>
+            </div>
+            <div>
+              <span>Avaliação:</span>
+              <span>{{book.rating}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
