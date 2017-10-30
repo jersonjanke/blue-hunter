@@ -1,77 +1,81 @@
 <div class="container">
-  <div class="row">
-    <div class="col-lg-12">
-      <h1 class="title blue">Pesquisa de clientes</h1>
-    </div>
-    <div class="col-lg-12">
-      <form #f="ngForm" (ngSubmit)="search(f)" novalidate>
-        <div class="row">
-          <div class="col-md-10 col-sm-12">
-            <input name="name" ngModel required class="form-control" placeholder="Informe nome do cliente">
-            <div *ngIf="!isSearch">
-              <small *ngIf="clients.length > 1">Encontramos <strong>{{clients.length}}</strong> resultados.</small>
-              <small *ngIf="clients.length == 1">Encontramos <strong>{{clients.length}}</strong> resultado.</small>
-            </div>
-            <br/>
-          </div>
-          <div class="col-md-2 col-sm-12">
-            <button type="submit" [disabled]="!f.valid" class="btn btn-primary">
-              Pesquisar              
-              <i *ngIf="isLoading" class="fa fa-spinner fa-spin" aria-hidden="true"></i>
-            </button>
-          </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="title blue">Pesquisa de clientes</h1>
         </div>
-      </form>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-12" *ngIf="clients.length == 0 && !isSearch">
-      <div class="alert alert-info">
-        Não encontramos nenhum registro
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-4" *ngFor="let client of clients; let index = index">
-      <div class="card-person">
-        <div class="row">
-          <div class="col-xs-3">
-            <div class="img-icon">              
-              <i class="fa fa-user-circle-o fa-4x user-opacity" aria-hidden="true"></i>
-            </div>
-          </div>
-          <div class="col-xs-9">
-            <div>
-              <span class="bold-blue">Código</span>
-              <span>{{client.id}}</span>
-            </div>
-            <div>
-              <span class="bold-blue">Nome</span>
-              <span>{{client.fullName}}</span>
-            </div>
-            <div>
-              <span class="bold-blue">Gênero</span>
-              <span>{{client.gender}}</span>
-            </div>
-            <div>
-              <span class="bold-blue">Idade</span>
-              <span>{{client.age}} anos</span>
-            </div>
-            <div>
-              <span class="bold-blue">Email</span>
-              <span><a href="mailto:email@dominio.com">{{client.email}}</a></span>
-            </div>
-            <div>
-              <span class="bold-blue">Telefone</span>
-              <span>{{client.phone}}</span>
-            </div>
-            <div>
-              <span class="bold-blue">Usuário</span>
-              <span>{{client.username}}</span>
-            </div>
-          </div>
+        <div class="col-lg-12">
+            <form #f="ngForm" (ngSubmit)="search(f)" novalidate>
+                <div class="row">
+                    <div class="col-md-10 col-sm-12">
+                        <input name="name" ngModel required class="form-control" placeholder="Informe nome do cliente">
+                        <div *ngIf="!isSearch">
+                            <small *ngIf="clients.length > 1">Encontramos <strong>{{clients.length}}</strong>
+                                resultados.
+                            </small>
+                            <small *ngIf="clients.length == 1">Encontramos <strong>{{clients.length}}</strong>
+                                resultado.
+                            </small>
+                        </div>
+                        <br/>
+                    </div>
+                    <div class="col-md-2 col-sm-12">
+                        <button type="submit" [disabled]="!f.valid" class="btn btn-primary">
+                            Pesquisar
+                            <i *ngIf="isLoading" class="fa fa-spinner fa-spin" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
         </div>
-      </div>
     </div>
-  </div>
+    <div class="row">
+        <div class="col-md-12" *ngIf="clients.length == 0 && !isSearch">
+            <div class="alert alert-info">
+                Não encontramos nenhum registro
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4" *ngFor="let client of clients; let index = index">
+            <div class="card-person">
+                <div class="row">
+                    <div class="col-xs-3">
+                        <div class="img-icon">
+                            <i class="fa fa-user-circle-o fa-4x user-opacity" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <div class="col-xs-9">
+                        <div>
+                            <span class="bold-blue">Código</span>
+                            <span>{{client.id}}</span>
+                        </div>
+                        <div>
+                            <span class="bold-blue">Nome</span>
+                            <span>{{client.fullName}}</span>
+                        </div>
+                        <div>
+                            <span class="bold-blue">Gênero</span>
+                            <span>{{client.gender}}</span>
+                        </div>
+                        <div>
+                            <span class="bold-blue">Idade</span>
+                            <span>{{client.age}} anos</span>
+                        </div>
+                        <div>
+                            <span class="bold-blue">Email</span>
+                            <span><a href="mailto:email@dominio.com">{{client.email}}</a></span>
+                        </div>
+                        <div>
+                            <span class="bold-blue">Telefone</span>
+                            <span>{{client.phone}}</span>
+                        </div>
+                        <div>
+                            <span class="bold-blue">Usuário</span>
+                            <span>{{client.username}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

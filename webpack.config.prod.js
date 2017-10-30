@@ -6,21 +6,26 @@ var commonConfig = require('./webpack.config.common');
 
 //merge common with prod config
 module.exports = webpackMerge(commonConfig, {
-    entry: './src/app/main.aot.ts',
+    devtool: 'cheap-module-eval-source-map',
     output: {
         path: path.resolve(__dirname, 'dist'),
         publicPath: '/',
-        filename: '[hash].js',
-        chunkFilename: '[id].[hash].chunck.js' //chunks for lazy loading ramdom generated [hash] to make sure there is no cached lazy loaded pages
+        filename: 'bundle.js',
+        chunkFilename: '[id].chunck.js' //chunks for lazy loading
     },
     module: {
         rules: [{
             test: /\.ts$/,
-            use: [
-                { loader: 'awesome-typescript-loader' },
-                { loader: 'angular2-template-loader' },
-                { loader: 'angular-router-loader?aot=true' }
-            ]
+            use: [{
+                loader: 'awesome-typescript-loader',
+                options: {
+                    transpileOnly: true // to not analized all .ts files avoiding problems for AOT compilatio
+                }
+            }, {
+                loader: 'angular2-template-loader'
+            }, {
+                loader: 'angular-router-loader'
+            }]
         }]
     },
     plugins: [

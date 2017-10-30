@@ -1,21 +1,21 @@
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <div class="navbar-header">
-        <a class="navbar-brand blue" href="#">Blue Hunter</a>
+            <a class="navbar-brand blue" href="#">Blue Hunter</a>
         </div>
         <ul class="nav navbar-nav">
-        <li [ngClass]="{'active' : activeClient}">
-            <a class="blue" (click)="getActiveClient()" routerLink="/client">
-                <i class="fa fa-user-circle-o" aria-hidden="true"></i>
-                Cliente                
-            </a>
-        </li>
-        <li [ngClass]="{'active' : activeBook}">
-            <a class="blue" (click)="getActiveBook()" routerLink="/book">                
-                <i class="fa fa-book" aria-hidden="true"></i>
-                Livros                
-            </a>
-        </li>
+            <li [ngClass]="{'active' : activeClient}">
+                <a class="blue" (click)="getActiveClient()" routerLink="/client">
+                    <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                    Cliente
+                </a>
+            </li>
+            <li [ngClass]="{'active' : activeBook}">
+                <a class="blue" (click)="getActiveBook()" routerLink="/book">
+                    <i class="fa fa-book" aria-hidden="true"></i>
+                    Livros
+                </a>
+            </li>
         </ul>
     </div>
 </nav>

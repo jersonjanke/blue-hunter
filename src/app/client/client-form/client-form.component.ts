@@ -1,30 +1,43 @@
-import { Component, OnInit, Input } from '@angular/core';
+import {Component, OnInit, Input} from '@angular/core';
 
-import { ClientFormService } from './client-form.service';
-import { Client } from './client.model';
+import {ClientFormService} from './client-form.service';
+import {Client} from './client.model';
 
 @Component({
-  selector: 'app-client-form',
-  templateUrl: './client-form.component.html',
-  styles: [require('./../../app.component.less')]
+    selector: 'app-client-form',
+    templateUrl: './client-form.component.html',
+    styles: [require('./../../app.component.less')]
 })
 export class ClientFormComponent implements OnInit {
 
-  private clients: Client[] = [];
-  private isLoading = false;
-  private isSearch = true;
+    /**
+     * Inicializações
+     */
+    private clients: Client[] = [];
 
-  constructor(private clientFormService: ClientFormService) { }
+    /**
+     * Flags de controle
+     * @type {boolean}
+     */
+    private isLoading = false;
+    private isSearch = true;
 
-  ngOnInit() {
-  }
+    constructor(private clientFormService: ClientFormService) {
+    }
 
-  search(form) {
-    this.isLoading = true;
-    this.clientFormService.getData(form.value.name).subscribe((response: any) => {
-      this.clients = response;
-      this.isLoading = false;
-      this.isSearch = false;
-    });
-  }
+    ngOnInit() {
+    }
+
+    /**
+     * Pesquisa de livros com base no input de pesquisa
+     * @param form
+     */
+    search(form) {
+        this.isLoading = true;
+        this.clientFormService.getData(form.value.name).subscribe((response: any) => {
+            this.clients = response;
+            this.isLoading = false;
+            this.isSearch = false;
+        });
+    }
 }
