@@ -29,6 +29,29 @@ export class ClientFormComponent implements OnInit {
     }
 
     /**
+     * Gets
+     */
+    getIsLoading() {
+        return this.isLoading;
+    }
+
+    getIsSearch() {
+        return this.isSearch;
+    }
+
+    /**
+     * Sets
+     * @param isLoading 
+     */
+    setIsLoading(isLoading) {
+        this.isLoading = isLoading;
+    }
+
+    setIsSearch(isSearch) {
+        this.isSearch = isSearch;
+    }
+
+    /**
      * Pesquisa de livros com base no input de pesquisa
      * @param form
      */
@@ -36,7 +59,8 @@ export class ClientFormComponent implements OnInit {
         this.isLoading = true;
         this.clientFormService.getData(form.value.name).subscribe((response: any) => {
             this.clients = response;
-            this.isLoading = false;
+            this.setIsLoading(false);
+            this.setIsSearch(false);    
             this.isSearch = false;
         });
     }

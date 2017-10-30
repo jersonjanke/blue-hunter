@@ -1,7 +1,7 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
-import {Book} from './book.model';
-import {BookFormService} from './book-form.service';
+import { Book } from './book.model';
+import { BookFormService } from './book-form.service';
 
 @Component({
     selector: 'app-book-form',
@@ -14,7 +14,7 @@ export class BookFormComponent implements OnInit {
      * Inicializações
      */
 
-    private books: Book[] = [];
+    books: Book[] = [];
     /**
      * Flags de controle
      * @type {boolean}
@@ -26,6 +26,28 @@ export class BookFormComponent implements OnInit {
     }
 
     ngOnInit() {
+    }
+
+    /**
+     * Gets
+     */
+    getIsLoading() {
+        return this.isLoading;
+    }
+
+    getIsSearch() {
+        return this.isSearch;
+    }
+
+     /**
+      * Sets
+      */
+    setIsLoading(isLoading) {
+        this.isLoading = isLoading;
+    }
+
+    setIsSearch(isSearch) {
+        this.isSearch = isSearch;
     }
 
     /**

@@ -3,7 +3,7 @@ import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 import { Observable } from 'rxjs/Observable';
 
-import {Book} from './book.model';
+import { Book } from './book.model';
 
 @Injectable()
 export class BookFormService {
