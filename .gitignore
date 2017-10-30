@@ -13,4 +13,5 @@ src/app/**/*.shim.ngstyle.ts
 src/app/**/*.ngsummary.json
 
 yarn.lock
+package-lock.json
 *.idea
