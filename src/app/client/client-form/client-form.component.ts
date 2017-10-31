@@ -13,7 +13,7 @@ export class ClientFormComponent implements OnInit {
     /**
      * Inicializações
      */
-    private clients: Client[] = [];
+    clients: Client[] = [];
 
     /**
      * Flags de controle
